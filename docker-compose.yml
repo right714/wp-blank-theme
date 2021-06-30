@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+    mariadb:
+        image: mariadb:latest
+        ports:
+            - 3306:3306
+        env_file: ./docker/mysql.env
+        volumes:
+            - ./docker/data:/var/lib/mysql
+            - ./docker/init-data:/docker-entrypoint-initdb.d
+
+    wordpress:
+        image: wordpress:latest
+        depends_on:
+            - mariadb
+        ports:
+            - 8080:80
+        env_file: ./docker/wordpress.env
+        volumes:
+            - ./blank-theme:/var/www/html/wp-content/themes/blank-theme
+            - ./docker/wp-plugins:/var/www/html/wp-content/plugins
+            - ./docker/wp-uploads:/var/www/html/wp-content/uploads

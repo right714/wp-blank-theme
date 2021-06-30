@@ -1,0 +1,12 @@
+# Settings
+.vscode
+
+# Mac files
+.DS_Store
+
+# Node.js
+node_modules/
+
+# Docker files
+docker/data
+docker/wp-uploads
