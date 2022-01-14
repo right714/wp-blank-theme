@@ -6,7 +6,9 @@
 
 # Node.js
 node_modules/
+build/
 
 # Docker files
 docker/data
-docker/wp-uploads
+# docker/plugins
+docker/uploads

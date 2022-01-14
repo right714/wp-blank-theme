@@ -19,5 +19,5 @@ services:
         env_file: ./docker/wordpress.env
         volumes:
             - ./blank-theme:/var/www/html/wp-content/themes/blank-theme
-            - ./docker/wp-plugins:/var/www/html/wp-content/plugins
-            - ./docker/wp-uploads:/var/www/html/wp-content/uploads
+            - ./docker/plugins:/var/www/html/wp-content/plugins
+            - ./docker/uploads:/var/www/html/wp-content/uploads

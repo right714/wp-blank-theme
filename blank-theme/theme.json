@@ -1,0 +1,32 @@
+{
+    "version": 1,
+    "settings": {
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1240px"
+        },
+        "color": {
+            "custom": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "link": false
+        },
+        "typography": {
+            "customFontSize": false,
+            "customLineHeight": false
+        },
+        "spacing": {
+            "customMargin": false,
+            "customPadding": false
+        },
+        "border": {
+            "customColor": false,
+            "customRadius": false,
+            "customStyle": false,
+            "customWidth": false
+        }
+    },
+    "styles": {},
+    "customTemplates": [],
+    "templateParts": []
+}

@@ -7,7 +7,7 @@
     <?php get_header(); ?>
 
     <main id="main" class="main">
-        <h1>Hello World.</h1>
+        <h1>404 Not Found.</h1>
     </main>
 
     <?php get_footer(); ?>

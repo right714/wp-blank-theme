@@ -67,7 +67,12 @@ if (!function_exists('get_page_title')) {
             $title .= $post_type_obj->labels->singular_name;
         }
 
-        if (is_page()) $title .= get_the_title();
+        if (is_page() || is_home() || is_single()) {
+            $title .= get_the_title();
+            if (is_single()) {
+                $title .= ' | ' . get_post_type_object('post')->labels->singular_name;
+            }
+        }
 
         if (is_front_page()) {
             $title = get_bloginfo('name');
