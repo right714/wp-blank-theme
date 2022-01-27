@@ -5,18 +5,28 @@ services:
         image: mariadb:latest
         ports:
             - 3306:3306
-        env_file: ./docker/mysql.env
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: password
+            TZ: Asia/Tokyo
         volumes:
             - ./docker/data:/var/lib/mysql
             - ./docker/init-data:/docker-entrypoint-initdb.d
 
     wordpress:
-        image: wordpress:latest
+        build: ./docker/.
         depends_on:
             - mariadb
         ports:
             - 8080:80
-        env_file: ./docker/wordpress.env
+        environment:
+            WORDPRESS_DB_HOST: mariadb:3306
+            WORDPRESS_DB_NAME: wordpress
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: password
+            THEME_NAME: blank-theme
         volumes:
             - ./blank-theme:/var/www/html/wp-content/themes/blank-theme
             - ./docker/plugins:/var/www/html/wp-content/plugins
